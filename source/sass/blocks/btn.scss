@@ -1,7 +1,9 @@
 .btn {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 10px 0;
-  padding: 10px 20px;
+  padding: 10px;
 
   color: $color-default-white;
 

@@ -9,7 +9,12 @@
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
-    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></symbol></svg></div>
+    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></symbol><symbol id="icon-warning" viewBox="0 0 25 25">
+<path d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59644 25 0 19.4036 0 12.5C0 5.59644 5.59644 0 12.5 0C19.4036 0 25 5.59644 25 12.5Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 23C18.299 23 23 18.299 23 12.5C23 6.70101 18.299 2 12.5 2C6.70101 2 2 6.70101 2 12.5C2 18.299 6.70101 23 12.5 23ZM12.5 25C19.4036 25 25 19.4036 25 12.5C25 5.59644 19.4036 0 12.5 0C5.59644 0 0 5.59644 0 12.5C0 19.4036 5.59644 25 12.5 25Z" fill="#FE4E8E"/>
+<path d="M11.1874 9.88126H13.7916V20.8333H11.1874V9.88126ZM12.4999 8.07642C12.0277 8.07642 11.6319 7.93286 11.3124 7.64573C10.993 7.34492 10.8333 6.97575 10.8333 6.53821C10.8333 6.10068 10.993 5.73834 11.3124 5.45121C11.6319 5.1504 12.0277 5 12.4999 5C12.9721 5 13.368 5.14357 13.6874 5.4307C14.0069 5.70416 14.1666 6.05282 14.1666 6.47668C14.1666 6.92789 14.0069 7.31074 13.6874 7.62522C13.3819 7.92602 12.986 8.07642 12.4999 8.07642Z" fill="#FE4E8E"/>
+</symbol></svg>
+    </div>
     <div class="wrapper">
       <header class="header">
         <div class="container"><span class="header__logo">Логотип</span>
@@ -33,14 +38,94 @@
         </div>
       </header>
       <main>
-        <div class="intro">
-          <div class="container">
-            <p style="margin-top: 40px;">Текст&nbsp;с&nbsp;мнемониками</p>
-            <p style="margin-top: 40px;">Пример использования +img()</p>
-            <p style="margin-bottom: 40px;"><img src="img/content/placeholder.png" srcset="img/content/placeholder@2x.png 2x" width="120" height="120" alt="Пример">
-            </p>
+        <section class="quiz">
+          <div class="_container">
+            <h2 class="quiz__title">подбор корма</h2>
+            <p class="quiz__subtitle">Каждый питомец нуждается в особом рационе. С помощью этой анкеты мы поможем вам подобрать корм с учетом всех особенностей.</p>
+            <nav class="quiz__nav"> 
+              <ul class="quiz__nav-list">
+                <li class="quiz__nav-list-item"><a class="quiz__nav-link quiz__nav-link--current" href="#"><span class="quiz__nav-link-stripe"></span></a></li>
+                <li class="quiz__nav-list-item"><a class="quiz__nav-link" href="/back"><span class="quiz__nav-link-stripe"></span></a></li>
+                <li class="quiz__nav-list-item"><a class="quiz__nav-link" href="/back"><span class="quiz__nav-link-stripe"></span></a></li>
+                <li class="quiz__nav-list-item"><a class="quiz__nav-link" href="/back"><span class="quiz__nav-link-stripe"></span></a></li>
+                <li class="quiz__nav-list-item"><a class="quiz__nav-link" href="/back"><span class="quiz__nav-link-stripe"></span></a></li>
+                <li class="quiz__nav-list-item"><a class="quiz__nav-link" href="/back"><span class="quiz__nav-link-stripe"></span></a></li>
+              </ul>
+            </nav>
+            <div class="quiz__wrapper">
+              <div class="quiz__form quiz__form--01" data-validate data-callback="quizForm">
+                <form class="quiz__form-form" action="#">
+                  <h2 class="quiz__form-title">Укажите пол питомца</h2>
+                  <div class="quiz__form-row quiz__form-toggles">
+                    <div class="quiz__form-toggles-item">
+                      <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--male">
+                        <label>
+                          <input type="radio" id="male" name="gender"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Самец</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="quiz__form-toggles-item">
+                      <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--female">
+                        <label>
+                          <input type="radio" id="female" name="gender" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Самка</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 class="quiz__form-title">Укажите возраст</h2>
+                  <div class="quiz__form-row">
+                    <div class="quiz__form-row-col"><span class="quiz__form-warning">Не может быть отрицательным</span>
+                      <button class="quiz__form-btn quiz__form-btn--minus btn" type="button">-</button>
+                      <div class="custom-input quiz__form-input" data-validate-type="text">
+                        <label>
+                          <input type="text" id="pet-age" name="age" maxlength="2" placeholder="0">
+                        </label>
+                        <div class="custom-input__error">Укажите возраст</div>
+                      </div>
+                      <button class="quiz__form-btn quiz__form-btn--plus btn" type="button">+</button>
+                    </div>
+                    <div class="quiz__form-row-col">
+                      <div class="custom-select" data-select data-validate-type="select"><span class="custom-select__error">Выберите возраст</span><span class="custom-select__placeholder">Выберите</span>
+                        <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                        <ul class="custom-select__list" role="listbox">
+                          <li class="custom-select__item" tabindex="0" data-select-value="months" aria-selected="false" role="option">Месяц (а/ев)</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="years" aria-selected="false" role="option">Год (а) / Лет</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="quiz__form-disclaimer"><span class="quiz__form-disclaimer-icon">
+                      <svg width="25" height="25" aria-hidden="true">
+                        <use xlink:href="#icon-warning"></use>
+                      </svg></span><span class="quiz__form-disclaimer-text">Щенком /котенком называют животных в возрасте от 0 до 12 месяцев. После года животное считается взрослым.</span></div>
+                  <button class="quiz__form-submit btn" type="submit">Далее</button>
+                </form>
+              </div>
+              <div class="quiz__form quiz__form--02 is-next" data-validate data-callback="quizForm">
+                <form class="quiz__form-form" action="#">
+                  <h2 class="quiz__form-title">Тип животного</h2>
+                  <div class="quiz__form-row quiz__form-toggles">
+                    <div class="quiz__form-toggles-item">
+                      <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--cat">
+                        <label>
+                          <input type="radio" id="cat" name="type" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Кошка</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="quiz__form-toggles-item">
+                      <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--dog">
+                        <label>
+                          <input type="radio" id="dog" name="type"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Собака</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="quiz__form-submit btn" type="submit">Далее</button>
+                </form>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </main>
       <footer class="footer">
         <div class="container"></div>

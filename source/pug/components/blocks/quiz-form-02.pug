@@ -1,0 +1,33 @@
+mixin quiz-form-02()
+	-
+		const data = {
+			form: {
+				title1: "Тип животного",
+				check1: {
+					inputLabel: "Кошка",
+					inputType: "radio",
+					inputChecked: true,
+					inputId: "cat",
+					inputName: "type",
+				},
+				check2: {
+					inputLabel: "Собака",
+					inputType: "radio",
+					inputChecked: false,
+					inputId: "dog",
+					inputName: "type",
+				},
+				submit: {
+					text: "Далее",
+				}
+			}
+		}
+	.quiz__form.quiz__form--02.is-next(data-validate data-callback="quizForm")
+		form.quiz__form-form(action="#")
+			h2.quiz__form-title=data.form.title1
+			.quiz__form-row.quiz__form-toggles
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check1).custom-toggle--radio.quiz__form-check.quiz__form-check--cat
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check2).custom-toggle--radio.quiz__form-check.quiz__form-check--dog
+			button.quiz__form-submit.btn(type="submit")=data.form.submit.text

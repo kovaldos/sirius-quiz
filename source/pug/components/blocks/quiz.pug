@@ -1,0 +1,24 @@
+mixin quiz()
+	-
+		const data = {
+			title: "подбор корма",
+			subtitle: "Каждый питомец нуждается в особом рационе. С помощью этой анкеты мы поможем вам подобрать корм с учетом всех особенностей.",
+		}
+
+	section.quiz
+		._container
+			h2.quiz__title=data.title
+			p.quiz__subtitle=data.subtitle
+			nav.quiz__nav 
+				ul.quiz__nav-list
+					li.quiz__nav-list-item
+						a.quiz__nav-link.quiz__nav-link--current(href="#")
+							span.quiz__nav-link-stripe
+					- for(let i = 0; i < 5; i++)
+						li.quiz__nav-list-item
+							a.quiz__nav-link(href="/back")
+								span.quiz__nav-link-stripe
+			.quiz__wrapper
+				+quiz-form-01()
+				+quiz-form-02()
+

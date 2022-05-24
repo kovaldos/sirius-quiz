@@ -17,15 +17,29 @@ const baseValidationErrorCallback = (e) => {
   e.preventDefault();
 };
 
-const customExampleValidationSuccessCallback = (e) => {
+const quizFormSuccessCallback = (e) => {
   e.preventDefault();
   // В данном колбеке бэкендер будет писать запрос на отправку формы на сервер и обрабатывать возможные ошибки при отправке
+  const form01 = document.querySelector('.quiz__form--01');
+  const form02 = document.querySelector('.quiz__form--02');
+  const form03 = document.querySelector('.quiz__form--03');
+  const form04 = document.querySelector('.quiz__form--04');
+  const form05 = document.querySelector('.quiz__form--05');
+  const form06 = document.querySelector('.quiz__form--06');
+  const navStripes = document.querySelectorAll('.quiz__nav-link');
+  if (e.target.closest('.quiz__form') === form01) {
+    form01.classList.add('is-previous');
+    form02.classList.remove('is-next');
+    navStripes[0].classList.remove('quiz__nav-link--current');
+    navStripes[1].classList.add('quiz__nav-link--current');
+  }
+
   resetForm(e.target);
   // eslint-disable-next-line no-console
   console.log('Ваша форма успешна отправлена');
 };
 
-const customExampleValidationErrorCallback = (e) => {
+const quizFormErrorCallback = (e) => {
   e.preventDefault();
   // eslint-disable-next-line no-console
   console.error('Отправка формы невозможна, заполните все обязательные поля');
@@ -38,15 +52,15 @@ const callbacks = {
     // Колбек при не успешной валидации формы при попытке её отправки, не связан с запросами на сервер
     validationErrorCallback: baseValidationErrorCallback,
   },
-  customExample: {
-    validationSuccessCallback: customExampleValidationSuccessCallback,
-    validationErrorCallback: customExampleValidationErrorCallback,
+  quizForm: {
+    validationSuccessCallback: quizFormSuccessCallback,
+    validationErrorCallback: quizFormErrorCallback,
   },
 };
 
 const setCustomPhoneInputsEvent = () => {
   if (document.querySelectorAll('[data-validate-type="phone"] input').length) {
-    document.querySelector('html').addEventListener('input', ({target}) => {
+    document.querySelector('html').addEventListener('input', ({ target }) => {
       if (target.closest('[data-validate-type="phone"]')) {
         target.closest('[data-validate-type="phone"]').querySelector('input').dispatchEvent(new Event('input'));
       }
@@ -70,4 +84,4 @@ const initFormValidate = () => {
   }
 };
 
-export {initFormValidate};
+export { initFormValidate };
