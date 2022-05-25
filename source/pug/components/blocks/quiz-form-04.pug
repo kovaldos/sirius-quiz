@@ -1,0 +1,40 @@
+mixin quiz-form-04()
+	-
+		const data = {
+			form: {
+				title1: "Кастрирован?",
+				check1: {
+					inputLabel: "Да",
+					inputType: "radio",
+					inputChecked: true,
+					inputId: "Yes",
+					inputValue: "Yes",
+					inputName: "castration",
+				},
+				check2: {
+					inputLabel: "Нет",
+					inputType: "radio",
+					inputChecked: false,
+					inputId: "Not",
+					inputValue: "Not",
+					inputName: "castration",
+				},
+				disclaimer: "Кастрированные питомцы нуждаются в более тщательном подборе рациона.",
+				submit: {
+					text: "Далее",
+				}
+			}
+		}
+	.quiz__form.quiz__form--04.is-next(data-validate data-callback="quizForm")
+		form.quiz__form-form(action="#")
+			h2.quiz__form-title=data.form.title1
+			.quiz__form-row.quiz__form-toggles
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check1).custom-toggle--radio.quiz__form-check.quiz__form-check--yes
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check2).custom-toggle--radio.quiz__form-check.quiz__form-check--not
+			.quiz__form-disclaimer
+				span.quiz__form-disclaimer-icon
+					+icon("icon-warning", 25, 25)
+				span.quiz__form-disclaimer-text=data.form.disclaimer
+			button.quiz__form-submit.btn(type="submit")=data.form.submit.text

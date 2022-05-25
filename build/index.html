@@ -60,14 +60,14 @@
                     <div class="quiz__form-toggles-item">
                       <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--male">
                         <label>
-                          <input type="radio" id="male" name="gender"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Самец</span>
+                          <input type="radio" id="male" value="male" name="gender"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Самец</span>
                         </label>
                       </div>
                     </div>
                     <div class="quiz__form-toggles-item">
                       <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--female">
                         <label>
-                          <input type="radio" id="female" name="gender" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Самка</span>
+                          <input type="radio" id="female" value="female" name="gender" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Самка</span>
                         </label>
                       </div>
                     </div>
@@ -108,18 +108,73 @@
                     <div class="quiz__form-toggles-item">
                       <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--cat">
                         <label>
-                          <input type="radio" id="cat" name="type" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Кошка</span>
+                          <input type="radio" id="cat" value="cat" name="type" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Кошка</span>
                         </label>
                       </div>
                     </div>
                     <div class="quiz__form-toggles-item">
                       <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--dog">
                         <label>
-                          <input type="radio" id="dog" name="type"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Собака</span>
+                          <input type="radio" id="dog" value="dog" name="type"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Собака</span>
                         </label>
                       </div>
                     </div>
                   </div>
+                  <button class="quiz__form-submit btn" type="submit">Далее</button>
+                </form>
+              </div>
+              <div class="quiz__form quiz__form--03 is-next" data-validate data-callback="quizForm">
+                <form class="quiz__form-form" action="#">
+                  <h2 class="quiz__form-title">Тип породы</h2>
+                  <div class="quiz__form-row quiz__form-toggles">
+                    <div class="quiz__form-toggles-item">
+                      <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--small">
+                        <label>
+                          <input type="radio" id="small" value="small" name="breed-type" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Малые</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="quiz__form-toggles-item">
+                      <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--middle">
+                        <label>
+                          <input type="radio" id="middle" value="middle" name="breed-type"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Средние</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="quiz__form-toggles-item">
+                      <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--big">
+                        <label>
+                          <input type="radio" id="big" value="big" name="breed-type"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Крупные</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="quiz__form-submit btn" type="submit">Далее</button>
+                </form>
+              </div>
+              <div class="quiz__form quiz__form--04 is-next" data-validate data-callback="quizForm">
+                <form class="quiz__form-form" action="#">
+                  <h2 class="quiz__form-title">Кастрирован?</h2>
+                  <div class="quiz__form-row quiz__form-toggles">
+                    <div class="quiz__form-toggles-item">
+                      <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--yes">
+                        <label>
+                          <input type="radio" id="Yes" value="Yes" name="castration" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Да</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="quiz__form-toggles-item">
+                      <div class="custom-toggle custom-toggle--radio quiz__form-check quiz__form-check--not">
+                        <label>
+                          <input type="radio" id="Not" value="Not" name="castration"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Нет</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="quiz__form-disclaimer"><span class="quiz__form-disclaimer-icon">
+                      <svg width="25" height="25" aria-hidden="true">
+                        <use xlink:href="#icon-warning"></use>
+                      </svg></span><span class="quiz__form-disclaimer-text">Кастрированные питомцы нуждаются в более тщательном подборе рациона.</span></div>
                   <button class="quiz__form-submit btn" type="submit">Далее</button>
                 </form>
               </div>

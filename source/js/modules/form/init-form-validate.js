@@ -33,6 +33,18 @@ const quizFormSuccessCallback = (e) => {
     navStripes[0].classList.remove('quiz__nav-link--current');
     navStripes[1].classList.add('quiz__nav-link--current');
   }
+  if (e.target.closest('.quiz__form') === form02) {
+    form02.classList.add('is-previous');
+    form03.classList.remove('is-next');
+    navStripes[1].classList.remove('quiz__nav-link--current');
+    navStripes[2].classList.add('quiz__nav-link--current');
+  }
+  if (e.target.closest('.quiz__form') === form03) {
+    form03.classList.add('is-previous');
+    form04.classList.remove('is-next');
+    navStripes[2].classList.remove('quiz__nav-link--current');
+    navStripes[3].classList.add('quiz__nav-link--current');
+  }
 
   resetForm(e.target);
   // eslint-disable-next-line no-console

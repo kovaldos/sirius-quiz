@@ -1,0 +1,45 @@
+mixin quiz-form-03()
+	-
+		const data = {
+			form: {
+				title1: "Тип породы",
+				check1: {
+					inputLabel: "Малые",
+					inputType: "radio",
+					inputChecked: true,
+					inputId: "small",
+					inputValue: "small",
+					inputName: "breed-type",
+				},
+				check2: {
+					inputLabel: "Средние",
+					inputType: "radio",
+					inputChecked: false,
+					inputId: "middle",
+					inputValue: "middle",
+					inputName: "breed-type",
+				},
+				check3: {
+					inputLabel: "Крупные",
+					inputType: "radio",
+					inputChecked: false,
+					inputId: "big",
+					inputValue: "big",
+					inputName: "breed-type",
+				},
+				submit: {
+					text: "Далее",
+				}
+			}
+		}
+	.quiz__form.quiz__form--03.is-next(data-validate data-callback="quizForm")
+		form.quiz__form-form(action="#")
+			h2.quiz__form-title=data.form.title1
+			.quiz__form-row.quiz__form-toggles
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check1).custom-toggle--radio.quiz__form-check.quiz__form-check--small
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check2).custom-toggle--radio.quiz__form-check.quiz__form-check--middle
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check3).custom-toggle--radio.quiz__form-check.quiz__form-check--big
+			button.quiz__form-submit.btn(type="submit")=data.form.submit.text

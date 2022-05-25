@@ -1350,9 +1350,9 @@ button,
 }
 
 .quiz__form.is-previous {
-  -webkit-transform: translateX(-200%);
-  -ms-transform: translateX(-200%);
-  transform: translateX(-200%);
+  -webkit-transform: translateX(-500%);
+  -ms-transform: translateX(-500%);
+  transform: translateX(-500%);
   position: absolute;
   visibility: hidden;
   opacity: 0;
@@ -1360,9 +1360,9 @@ button,
 }
 
 .quiz__form.is-next {
-  -webkit-transform: translateX(200%);
-  -ms-transform: translateX(200%);
-  transform: translateX(200%);
+  -webkit-transform: translateX(500%);
+  -ms-transform: translateX(500%);
+  transform: translateX(500%);
   position: absolute;
   visibility: hidden;
   opacity: 0;
@@ -1388,7 +1388,7 @@ button,
   align-items: center;
 }
 
-.quiz__form-row-col:first-of-type {
+.quiz__form-row-col:not(:last-of-type) {
   margin-right: 20px;
 }
 
@@ -1591,12 +1591,6 @@ button,
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .quiz__form-disclaimer.is-active {
@@ -1715,11 +1709,15 @@ button,
   background-repeat: no-repeat;
 }
 
-.quiz__form--02 .custom-toggle {
+.quiz__form--02 .custom-toggle,
+.quiz__form--03 .custom-toggle,
+.quiz__form--04 .custom-toggle {
   height: 180px;
 }
 
-.quiz__form--02 .custom-toggle--radio label {
+.quiz__form--02 .custom-toggle--radio label,
+.quiz__form--03 .custom-toggle--radio label,
+.quiz__form--04 .custom-toggle--radio label {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -1733,7 +1731,9 @@ button,
   padding-left: 0;
 }
 
-.quiz__form--02 .custom-toggle--radio .custom-toggle__label {
+.quiz__form--02 .custom-toggle--radio .custom-toggle__label,
+.quiz__form--03 .custom-toggle--radio .custom-toggle__label,
+.quiz__form--04 .custom-toggle--radio .custom-toggle__label {
   margin-bottom: 18px;
 }
 
@@ -1755,6 +1755,58 @@ button,
 }
 
 .quiz__form--02 .quiz__form-submit {
+  margin: 40px 0 0;
+}
+
+.quiz__form--03 .quiz__form-toggles {
+  margin-bottom: 0;
+}
+
+.quiz__form--03 .quiz__form-check--small .custom-toggle__icon {
+  background: url(./../../img/svg/pet-small.svg);
+  background-position: center 80px;
+}
+
+.quiz__form--03 .quiz__form-check--middle .custom-toggle__icon {
+  background: url(./../../img/svg/pet-middle.svg);
+  background-position: center 58px;
+}
+
+.quiz__form--03 .quiz__form-check--big .custom-toggle__icon {
+  background: url(./../../img/svg/pet-big.svg);
+  background-position: center 26px;
+}
+
+.quiz__form--03 .quiz__form-check .custom-toggle__icon {
+  background-repeat: no-repeat;
+}
+
+.quiz__form--03 .quiz__form-submit {
+  margin: 40px 0 0;
+}
+
+.quiz__form--04 .quiz__form-toggles {
+  margin-bottom: 0;
+}
+
+.quiz__form--04 .quiz__form-check--yes .custom-toggle__icon {
+  background: url(./../../img/svg/checked-circle.svg);
+}
+
+.quiz__form--04 .quiz__form-check--not .custom-toggle__icon {
+  background: url(./../../img/svg/unchecked-circle.svg);
+}
+
+.quiz__form--04 .quiz__form-check .custom-toggle__icon {
+  background-position: center 44px;
+  background-repeat: no-repeat;
+}
+
+.quiz__form--04 .quiz__form-disclaimer {
+  top: 20px;
+}
+
+.quiz__form--04 .quiz__form-submit {
   margin: 40px 0 0;
 }
 
@@ -1797,6 +1849,14 @@ button,
   ._container {
     max-width: 970px;
   }
+
+  .quiz__form-disclaimer {
+    right: 0;
+  }
+
+  .quiz__form--04 .quiz__form-disclaimer {
+    max-width: 500px;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -1807,6 +1867,14 @@ button,
 
   .quiz__form-disclaimer {
     position: initial;
+  }
+
+  .quiz__form--04 .quiz__form-disclaimer {
+    max-width: 580px;
+  }
+
+  .quiz__form--04 .quiz__form-submit {
+    margin: 80px 0 0;
   }
 }
 
