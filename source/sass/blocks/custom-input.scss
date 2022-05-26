@@ -26,13 +26,11 @@
 
       &:hover,
       &:focus-visible {
-        // border: 2px solid rgba($color-default-black, 0.5);
-        border-color: rgba(254, 78, 142, 0.5);
+        border: 2px solid rgba($color-default-black, 0.5);
       }
 
       &:focus {
-        // border: 2px solid rgba($color-default-black, 0.8);
-        border-color: rgba(254, 78, 142, 1);
+        border: 2px solid rgba($color-default-black, 0.8);
       }
     }
   }

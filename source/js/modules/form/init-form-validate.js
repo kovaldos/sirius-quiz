@@ -25,7 +25,7 @@ const quizFormSuccessCallback = (e) => {
   const form03 = document.querySelector('.quiz__form--03');
   const form04 = document.querySelector('.quiz__form--04');
   const form05 = document.querySelector('.quiz__form--05');
-  const form06 = document.querySelector('.quiz__form--06');
+  const resultBlock = document.querySelector('.quiz__result');
   const navStripes = document.querySelectorAll('.quiz__nav-link');
   if (e.target.closest('.quiz__form') === form01) {
     form01.classList.add('is-previous');
@@ -44,6 +44,18 @@ const quizFormSuccessCallback = (e) => {
     form04.classList.remove('is-next');
     navStripes[2].classList.remove('quiz__nav-link--current');
     navStripes[3].classList.add('quiz__nav-link--current');
+  }
+  if (e.target.closest('.quiz__form') === form04) {
+    form04.classList.add('is-previous');
+    form05.classList.remove('is-next');
+    navStripes[3].classList.remove('quiz__nav-link--current');
+    navStripes[4].classList.add('quiz__nav-link--current');
+  }
+  if (e.target.closest('.quiz__form') === form05) {
+    form05.classList.add('is-previous');
+    resultBlock.classList.remove('is-next');
+    navStripes[4].classList.remove('quiz__nav-link--current');
+    navStripes[5].classList.add('quiz__nav-link--current');
   }
 
   resetForm(e.target);

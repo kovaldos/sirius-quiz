@@ -102,8 +102,14 @@
 		}
 		&-toggles {
 			margin-bottom: 60px;
+			@include vp-992 {
+				flex-wrap: wrap;
+			}
 			&-item:not(:last-of-type) {
 				margin-right: 20px;
+				@include vp-767 {
+					margin-bottom: 10px;
+				}
 			}
 		}
 		.custom-toggle {
@@ -139,6 +145,8 @@
 					font-size: 16px;
 					line-height: 20px;
 					color: #6a3f24;
+					white-space: nowrap;
+					
 				}
 			}
 		}
@@ -302,6 +310,28 @@
 				}
 			}
 		}
+		.custom-input {
+			label {
+				input {
+					color: #6a3f24;
+					&::placeholder {
+						color: #6a3f24;
+					}
+					&:hover {
+						border: 0;
+						border-bottom: 1px solid rgba(254, 78, 142, 0.8);
+					}
+					&:focus,
+					:focus-visible {
+						border: 0;
+						border-bottom: 1px solid rgba(254, 78, 142, 0.5);
+					}
+				}
+			}
+			&__label {
+				color: #6a3f24;
+			}
+		}
 		&--01 {
 			.custom-input.is-invalid input {
 				border: 0;
@@ -360,17 +390,18 @@
 			&-check {
 				&--male {
 					.custom-toggle__icon {
-						background: url(./../../img/svg/icon-male.svg);
+						background: url(./../img/svg/icon-male.svg);
 					}
 				}
 				&--female {
 					.custom-toggle__icon {
-						background: url(./../../img/svg/icon-female.svg);
+						background: url(./../img/svg/icon-female.svg);
 					}
 				}
 				.custom-toggle__icon {
 					background-position: 17px center;
 					background-repeat: no-repeat;
+
 				}
 			}
 		}
@@ -379,6 +410,10 @@
 		&--04 {
 			.custom-toggle {
 				height: 180px;
+				@include vp-477 {
+					width: 132px;
+					height: 132px;
+				}
 				&--radio {
 					label {
 						flex-direction: column;
@@ -388,6 +423,9 @@
 					}
 					.custom-toggle__label {
 						margin-bottom: 18px;
+						@include vp-477 {
+							margin-bottom: 13px;
+						}
 					}
 				}
 			}
@@ -399,17 +437,26 @@
 			&-check {
 				&--cat {
 					.custom-toggle__icon {
-						background: url(./../../img/svg/cat.svg);
+						background: url(./../img/svg/cat.svg);
+						@include vp-477 {
+							background-position: center 28px;
+						}
 					}
 				}
 				&--dog {
 					.custom-toggle__icon {
-						background: url(./../../img/svg/dog.svg);
+						background: url(./../img/svg/dog.svg);
+						@include vp-477 {
+							background-position: center 21px;
+						}
 					}
 				}
 				.custom-toggle__icon {
 					background-position: center 30px;
 					background-repeat: no-repeat;
+					@include vp-477 {
+						background-size: 50% 50%;
+					}
 				}
 			}
 			&-submit {
@@ -423,25 +470,38 @@
 			&-check {
 				&--small {
 					.custom-toggle__icon {
-						background: url(./../../img/svg/pet-small.svg);
+						background: url(./../img/svg/pet-small.svg);
 						background-position: center 80px;
+						@include vp-477 {
+							background-position: center 58px;
+						}
 					}
 				}
 				&--middle {
 					.custom-toggle__icon {
-						background: url(./../../img/svg/pet-middle.svg);
+						background: url(./../img/svg/pet-middle.svg);
 						background-position: center 58px;
+						@include vp-477 {
+							background-position: center 41px;
+						}
 					}
 				}
 				&--big {
 					.custom-toggle__icon {
-						background: url(./../../img/svg/pet-big.svg);
+						background: url(./../img/svg/pet-big.svg);
 						background-position: center 26px;
+						@include vp-477 {
+							background-position: center 18px;
+						}
 					}
 				}
 				.custom-toggle__icon {
 					background-repeat: no-repeat;
+					@include vp-477 {
+						background-size: 50%;
+					}
 				}
+
 			}
 			&-submit {
 				margin: 40px 0 0;
@@ -454,17 +514,21 @@
 			&-check {
 				&--yes {
 					.custom-toggle__icon {
-						background: url(./../../img/svg/checked-circle.svg);
+						background: url(./../img/svg/checked-circle.svg);
 					}
 				}
 				&--not {
 					.custom-toggle__icon {
-						background: url(./../../img/svg/unchecked-circle.svg);
+						background: url(./../img/svg/unchecked-circle.svg);
 					}
 				}
 				.custom-toggle__icon {
 					background-position: center 44px;
 					background-repeat: no-repeat;
+					@include vp-477 {
+						background-size: 40%;
+						background-position: center 32px;
+					}
 				}
 			}
 			&-disclaimer {
@@ -483,5 +547,168 @@
 				}
 			}
 		}
+		&--05 {
+			.custom-input {
+				width: 100%;
+				max-width: 180px;
+				padding: 0;
+				margin-bottom: 60px;
+				label {
+					input {
+						width: 100%;
+						min-height: 30px;
+						margin-left: 0;
+						padding: 5px;
+						border: 0;
+						border-bottom: 1px solid #cdc1b2;
+						border-radius: 0;
+					}
+				}
+				&__label {
+					order: 1;
+					margin: 0 0px 0 -15px;
+				}
+				&__error {
+					bottom: -25px;
+					left: 0;
+				}
+			}
+			.custom-toggle {
+				&--radio {
+					width: fit-content;
+					@include vp-477 {
+						height: auto;
+					}
+					label {
+						padding: 10px;
+						justify-content: center;
+					}
+					.custom-toggle__label {
+						@include vp-477 {
+							white-space: initial;
+						}
+					}
+				}
+			}
+		}
+		&--05 & {
+			&-toggles {
+				margin-bottom: 0;
+				&-item {
+					&:not(:last-of-type) {
+						@include vp-992 {
+							margin-bottom: 20px;
+						}
+					}
+				}
+			}
+			&-check {
+				background: none;
+			}
+			&-submit {
+				margin: 40px 0 0;
+			}
+		}
+		&.quiz__result {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-column-gap: 20px;
+			grid-row-gap: 40px;
+			@include vp-992 {
+				grid-template-columns: 1fr 1fr;
+				justify-items: center;
+			}
+			@include vp-477 {
+				grid-template-columns: auto;
+			}
+		}
 	}
+}
+
+// Эти стили есть на проекте. Не брать при переносе на прод
+
+.feed-dog-catalog-body {
+	max-width: 380px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	position: relative;
+	@include vp-992 {
+		max-width: 295px;
+	}
+}
+
+.feed-dog-catalog-body__img {
+	padding: 0 0 20px 0;
+}
+
+.feed-dog-catalog-body__img img {
+	max-width: 100%;
+	border: 1px solid #ede4de;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	@include vp-992 {
+		width: 294px;
+		height: 356px;
+	}
+}
+
+.feed-dog-catalog-body__title h2 {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 24px;
+	color: #6a3f24;
+}
+
+.feed-dog-catalog-body__text {
+	min-height: 48px;
+	max-width: 280px;
+}
+
+.feed-dog-catalog-body__text p {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: #6a3f24;
+}
+
+.feed-dog-catalog-body__weight {
+	padding: 30px 0 0 0;
+}
+
+.feed-dog-catalog-body__weight p {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	color: #6a3f24;
+}
+
+.feed-dog-catalog-body__link {
+	padding: 30px 0 50px 0;
+}
+
+.feed-dog-catalog-body__link a {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	letter-spacing: 0.0357143em;
+	color: #6a3f24;
+	padding: 11px 65px;
+	background: #ede4de;
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.24);
+	border-radius: 2px;
+	text-transform: uppercase;
 }

@@ -1,0 +1,67 @@
+mixin quiz-form-05()
+	-
+		const data = {
+			form: {
+				title1: "Вес питомца",
+				input: {
+					inputLabel: "кг",
+					inputPlaceholder: "0",
+					inputError: "Введите вес",
+					inputId: "weight",
+					inputName: "weight",
+					inputMinLength: 1,
+					inputMaxLength: 3,
+				},
+				title2: "Особые потребности",
+				check1: {
+					inputLabel: "Чувствительное пищеварение",
+					inputType: "radio",
+					inputChecked: true,
+					inputId: "sensitive-digestion",
+					inputValue: "sensitive-digestion",
+					inputName: "special-needs",
+				},
+				check2: {
+					inputLabel: "Контроль веса",
+					inputType: "radio",
+					inputChecked: false,
+					inputId: "weight-control",
+					inputValue: "weight-control",
+					inputName: "special-needs",
+				},
+				check3: {
+					inputLabel: "Чувствительная мочевыделительная система",
+					inputType: "radio",
+					inputChecked: false,
+					inputId: "sensitive-urinary",
+					inputValue: "sensitive-urinary",
+					inputName: "special-needs",
+				},
+				check4: {
+					inputLabel: "Нет особенностей",
+					inputType: "radio",
+					inputChecked: false,
+					inputId: "not-special",
+					inputValue: "not-special",
+					inputName: "special-needs",
+				},
+				submit: {
+					text: "Далее",
+				}
+			}
+		}
+	.quiz__form.quiz__form--05.is-next(data-validate data-callback="quizForm")
+		form.quiz__form-form(action="#")
+			h2.quiz__form-title=data.form.title1
+			+custom-input(data.form.input)(data-validate-type="text")
+			h2.quiz__form-title=data.form.title2
+			.quiz__form-row.quiz__form-toggles
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check1).custom-toggle--radio.quiz__form-check.quiz__form-check--sensitive-digestion
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check2).custom-toggle--radio.quiz__form-check.quiz__form-check--weight-control
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check3).custom-toggle--radio.quiz__form-check.quiz__form-check--sensitive-urinary
+				.quiz__form-toggles-item
+					+custom-toggle(data.form.check4).custom-toggle--radio.quiz__form-check.quiz__form-check--not-special
+			button.quiz__form-submit.btn(type="submit")=data.form.submit.text
