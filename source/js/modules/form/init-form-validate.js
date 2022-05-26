@@ -27,37 +27,30 @@ const quizFormSuccessCallback = (e) => {
   const form05 = document.querySelector('.quiz__form--05');
   const resultBlock = document.querySelector('.quiz__result');
   const navStripes = document.querySelectorAll('.quiz__nav-link');
-  if (e.target.closest('.quiz__form') === form01) {
-    form01.classList.add('is-previous');
-    form02.classList.remove('is-next');
-    navStripes[0].classList.remove('quiz__nav-link--current');
-    navStripes[1].classList.add('quiz__nav-link--current');
-  }
-  if (e.target.closest('.quiz__form') === form02) {
-    form02.classList.add('is-previous');
-    form03.classList.remove('is-next');
-    navStripes[1].classList.remove('quiz__nav-link--current');
-    navStripes[2].classList.add('quiz__nav-link--current');
-  }
-  if (e.target.closest('.quiz__form') === form03) {
-    form03.classList.add('is-previous');
-    form04.classList.remove('is-next');
-    navStripes[2].classList.remove('quiz__nav-link--current');
-    navStripes[3].classList.add('quiz__nav-link--current');
-  }
-  if (e.target.closest('.quiz__form') === form04) {
-    form04.classList.add('is-previous');
-    form05.classList.remove('is-next');
-    navStripes[3].classList.remove('quiz__nav-link--current');
-    navStripes[4].classList.add('quiz__nav-link--current');
-  }
-  if (e.target.closest('.quiz__form') === form05) {
-    form05.classList.add('is-previous');
-    resultBlock.classList.remove('is-next');
-    navStripes[4].classList.remove('quiz__nav-link--current');
-    navStripes[5].classList.add('quiz__nav-link--current');
-  }
+  const formData = new FormData(e.target);
+  const DATA = [];
+  const switchScreen = (screen1, screen2, index1, index2) => {
+    if (e.target.closest('.quiz__form') === screen1) {
+      screen1.classList.add('is-previous');
+      screen2.classList.remove('is-next');
+      navStripes[index1].classList.remove('quiz__nav-link--current');
+      navStripes[index2].classList.add('quiz__nav-link--current');
+    }
+  };
 
+  switchScreen(form01, form02, 0, 1);
+
+  switchScreen(form02, form03, 1, 2);
+  switchScreen(form03, form04, 2, 3);
+  switchScreen(form04, form05, 3, 4);
+  switchScreen(form05, resultBlock, 4, 5);
+
+  DATA.push(formData);
+  // Список пар ключ/значение
+  for (let [name, value] of formData) {
+    console.log(`${name} = ${value}`); // key1=value1, потом key2=value2
+  }
+  console.log(DATA);
   resetForm(e.target);
   // eslint-disable-next-line no-console
   console.log('Ваша форма успешна отправлена');

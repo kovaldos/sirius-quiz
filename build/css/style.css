@@ -1914,6 +1914,13 @@ button,
   grid-row-gap: 40px;
 }
 
+.page {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding-top: 165px;
+}
+
 .feed-dog-catalog-body {
   max-width: 380px;
   display: -webkit-box;
@@ -2039,6 +2046,10 @@ button,
 
   .quiz__form--04 .quiz__form-disclaimer {
     max-width: 500px;
+  }
+
+  .page {
+    padding-top: 95px;
   }
 }
 

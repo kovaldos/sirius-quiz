@@ -627,6 +627,16 @@
 
 // Эти стили есть на проекте. Не брать при переносе на прод
 
+.page {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	padding-top: 165px;
+	@include vp-1192 {
+		padding-top: 95px;
+	}
+}
+
 .feed-dog-catalog-body {
 	max-width: 380px;
 	display: -webkit-box;
